@@ -2,93 +2,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <title>GHOST MODS V1</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #080b12;
-      color: white;
-      text-align: center;
-    }
-    header {
-      padding: 28px 15px;
-      background: linear-gradient(135deg,#101b2e,#171020);
-      border-bottom: 2px solid #a855f7;
-    }
-    .ghost { font-size: 48px; }
-    h1 { color: #b86cff; margin: 10px 0; }
-    .sub { color: #9ca3af; font-size: 13px; }
-    main { padding: 22px 18px; max-width: 460px; margin: auto; }
-    .card {
-      background: #111723;
-      border: 1px solid #293347;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 18px;
-    }
-    h2 { font-size: 18px; margin-top: 0; }
-    p { color: #c4cad5; font-size: 14px; line-height: 1.5; }
-    button {
-      width: 100%;
-      padding: 15px;
-      margin-top: 10px;
-      border: 1px solid #a855f7;
-      border-radius: 10px;
-      background: #8b35d1;
-      color: white;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    button:active { transform: scale(.98); }
-    .secondary { background: #171e2c; }
-    #mensagem { color: #d8b4fe; min-height: 20px; }
-    footer { padding: 20px; color: #727b8c; font-size: 12px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080610">
+<title>GHOST MODS V1</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #080610;
+  --card: #151020;
+  --purple: #a855f7;
+  --pink: #d946ef;
+  --text: #fff;
+  --muted: #b6a9c9;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 28px 15px;
+  background: linear-gradient(145deg,#1b1030,#090811);
+  border-bottom: 2px solid var(--purple);
+}
+
+.ghost { font-size: 46px; }
+
+h1 {
+  margin: 8px 0;
+  color: #d8a5ff;
+  text-shadow: 0 0 16px #a855f7;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #49305e;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 14px #a855f711;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button, select, input {
+  width: 100%;
+  padding: 13px;
+  margin-top: 9px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+button {
+  border: 1px solid var(--purple);
+  background: linear-gradient(100deg,#7024b7,#a832d8);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active { transform: scale(.98); }
+
+.secondary {
+  background: #21172e;
+  border-color: #49305e;
+}
+
+input, select {
+  border: 1px solid #49305e;
+  background: #0c0913;
+  color: white;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  color: #e5caff;
+  text-align: left;
+  font-size: 13px;
+}
+
+.hidden { display: none !important; }
+
+.status {
+  color: #d8b4fe;
+  font-size: 13px;
+  min-height: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+  color: #82758f;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="ghost">👻</div>
-    <h1>GHOST MODS V1</h1>
-    <div class="sub">PAINEL GAMER • FREE FIRE</div>
-  </header>
+<header>
+  <div class="ghost">👻</div>
+  <h1>GHOST MODS V1</h1>
+  <div class="subtitle">GAMING CONFIGURATION</div>
+</header>
 
-  <main>
-    <section class="card">
-      <h2>🔥 BEM-VINDO, JOGADOR</h2>
-      <p>Seu espaço gamer está pronto para começar.</p>
-      <button onclick="mostrar('Bem-vindo ao GHOST MODS V1!')">
-        ENTRAR NO PAINEL
-      </button>
-    </section>
+<main>
+  <section id="home" class="card">
+    <h2>🔥 BEM-VINDO AO PAINEL</h2>
+    <p>Personalize e organize suas preferências de jogo.</p>
 
-    <section class="card">
-      <h2>🎯 ÁREA DE CONFIGURAÇÕES</h2>
-      <p>Consulte suas preferências e organize suas configurações de jogo.</p>
-      <button onclick="mostrar('Você pode personalizar suas configurações de jogo aqui.')">
-        CONFIGURAÇÕES
-      </button>
-      <button class="secondary" onclick="mostrar('Área de perfil selecionada!')">
-        MEU PERFIL
-      </button>
-    </section>
+    <label for="gameHome">Selecione seu jogo</label>
+    <select id="gameHome" onchange="changeGame(this.value)">
+      <option value="ff">Free Fire</option>
+      <option value="max">Free Fire MAX</option>
+    </select>
 
-    <section class="card">
-      <h2>👻 GHOST MODS</h2>
-      <p id="mensagem">Selecione uma opção acima.</p>
-    </section>
-  </main>
+    <button onclick="openPage('settings')">
+      🎯 ENTRAR NO PAINEL
+    </button>
+    <button class="secondary" onclick="openPage('profile')">
+      👤 MEU PERFIL
+    </button>
+  </section>
 
-  <footer>GHOST MODS V1 • Projeto independente de fãs</footer>
+  <section id="settings" class="card hidden">
+    <h2>🎯 CONFIGURAÇÕES</h2>
+    <p>Jogo selecionado: <strong id="gameLabel">Free Fire</strong></p>
 
-  <script>
-    function mostrar(texto) {
-      document.getElementById('mensagem').textContent = texto;
+    <label for="general">Sensibilidade geral (0–200)</label>
+    <input id="general" type="number" min="0" max="200"
+      placeholder="Digite um valor">
+
+    <label for="redDot">Mira ponto vermelho (0–200)</label>
+    <input id="redDot" type="number" min="0" max="200"
+      placeholder="Digite um valor">
+
+    <label for="scope2">Mira 2x (0–200)</label>
+    <input id="scope2" type="number" min="0" max="200"
+      placeholder="Digite um valor">
+
+    <label for="scope4">Mira 4x (0–200)</label>
+    <input id="scope4" type="number" min="0" max="200"
+      placeholder="Digite um valor">
+
+    <label for="sniper">Mira AWM (0–200)</label>
+    <input id="sniper" type="number" min="0" max="200"
+      placeholder="Digite um valor">
+
+    <label for="dpi">DPI atual do celular (opcional)</label>
+    <input id="dpi" type="number" min="1" max="2000"
+      placeholder="Digite o valor, se souber">
+
+    <button onclick="saveSettings()">💾 SALVAR CONFIGURAÇÕES</button>
+    <p id="settingsStatus" class="status"></p>
+
+    <button class="secondary" onclick="openPage('home')">VOLTAR</button>
+  </section>
+
+  <section id="profile" class="card hidden">
+    <h2>👤 MEU PERFIL</h2>
+
+    <label for="playerName">Nome de jogador</label>
+    <input id="playerName" maxlength="30" placeholder="Seu nick">
+
+    <label for="style">Estilo de jogo</label>
+    <select id="style">
+      <option value="Equilibrado">Equilibrado</option>
+      <option value="Precisão">Precisão</option>
+      <option value="Agressivo">Agressivo</option>
+    </select>
+
+    <button onclick="saveProfile()">💾 SALVAR PERFIL</button>
+    <p id="profileStatus" class="status"></p>
+    <button class="secondary" onclick="openPage('home')">VOLTAR</button>
+  </section>
+</main>
+
+<footer>
+  GHOST MODS V1 • Projeto independente de fãs<br>
+  As configurações são salvas neste navegador.
+</footer>
+
+<script>
+let currentGame = 'ff';
+
+const fields = [
+  'general', 'redDot', 'scope2',
+  'scope4', 'sniper', 'dpi'
+];
+
+function readStore(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function writeStore(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function changeGame(game) {
+  currentGame = game === 'max' ? 'max' : 'ff';
+  document.getElementById('gameHome').value = currentGame;
+  document.getElementById('gameLabel').textContent =
+    currentGame === 'max' ? 'Free Fire MAX' : 'Free Fire';
+
+  loadSettings();
+}
+
+function openPage(id) {
+  ['home', 'settings', 'profile'].forEach(function(page) {
+    document.getElementById(page).classList.add('hidden');
+  });
+
+  document.getElementById(id).classList.remove('hidden');
+
+  if (id === 'settings') loadSettings();
+  if (id === 'profile') loadProfile();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function loadSettings() {
+  const data = readStore('ghost_' + currentGame, {});
+
+  fields.forEach(function(field) {
+    document.getElementById(field).value =
+      data[field] === undefined ? '' : data[field];
+  });
+}
+
+function saveSettings() {
+  const data = {};
+
+  for (const field of fields) {
+    const input = document.getElementById(field);
+    const value = input.value.trim();
+
+    if (value !== '') {
+      const number = Number(value);
+      const max = field === 'dpi' ? 2000 : 200;
+
+      if (!Number.isFinite(number) || number < (field === 'dpi' ? 1 : 0)
+          || number > max) {
+        document.getElementById('settingsStatus').textContent =
+          'Confira o valor de ' + input.previousElementSibling?.textContent;
+        return;
+      }
+
+      data[field] = number;
+    } else {
+      data[field] = '';
     }
-  </script>
+  }
+
+  const ok = writeStore('ghost_' + currentGame, data);
+
+  document.getElementById('settingsStatus').textContent = ok
+    ? '✅ Preferências salvas para ' +
+      (currentGame === 'max' ? 'Free Fire MAX!' : 'Free Fire!')
+    : 'Não foi possível salvar. Verifique as permissões do navegador.';
+}
+
+function loadProfile() {
+  const profile = readStore('ghost_profile', {});
+  document.getElementById('playerName').value = profile.name || '';
+  document.getElementById('style').value =
+    profile.style || 'Equilibrado';
+}
+
+function saveProfile() {
+  const name = document.getElementById('playerName').value.trim();
+  const style = document.getElementById('style').value;
+
+  if (!name) {
+    document.getElementById('profileStatus').textContent =
+      'Digite seu nome de jogador.';
+    return;
+  }
+
+  const ok = writeStore('ghost_profile', { name: name, style: style });
+
+  document.getElementById('profileStatus').textContent = ok
+    ? '✅ Perfil salvo!'
+    : 'Não foi possível salvar o perfil.';
+}
+
+changeGame('ff');
+</script>
 </body>
 </html>
